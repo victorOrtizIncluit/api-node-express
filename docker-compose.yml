@@ -1,0 +1,16 @@
+version: "2.4"
+services:
+  mysql:
+    container_name: mysql
+    image: mysql:5.7.25
+    volumes:
+      - ./sql-data/db:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    hostname: VICODE
+    environment:
+      MYSQL_DATABASE: 'ecommerce_database'
+      MYSQL_USER: 'vicode'
+      MYSQL_PASSWORD: 'vicode_pass'
+      MYSQL_ROOT_PASSWORD: 'vicode000'
+      MYSQL_ROOT_PASSWORD: 'vicode000'
