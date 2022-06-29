@@ -1,0 +1,23 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "api ecommerce",
+  "main": "index.js",
+  "scripts": {
+    "dev":"node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vicodeHouse/api-node-express.git"
+  },
+  "author": "victor ortiz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vicodeHouse/api-node-express/issues"
+  },
+  "homepage": "https://github.com/vicodeHouse/api-node-express#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
