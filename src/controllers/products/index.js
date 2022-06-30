@@ -1,14 +1,31 @@
-module.exports = ({ v4 }) => ({
-  get: (req, res) => {
-    res.send(v4());
+module.exports = ({ db }) => ({
+  getAll: async (req, res) => {
+    const users = await db.User.findAll();
+    res.send(users);
   },
-  post: (req, res) => {
-   res.send('esto es un post');
- },
- update: (req, res) => {
-   res.send(v4());
- },
- delete: (req, res) => {
-   res.send(v4());
- },
+
+  getOne: async (req, res) => {
+    const { id } = req.params;
+    const user = await db.User.findOne(id);
+    res.send(user);
+  },
+
+  create: async (req, res) => {
+    const { body } = req;
+    const user = await db.User.create(body);
+    res.send(user);
+  },
+
+  update: async (req, res) => {
+    const { body } = req;
+    const { id } = req.params;
+    const user = await db.User.update(body, id);
+    res.send(user);
+  },
+
+  delete: async (req, res) => {
+    const { id } = req.params;
+    const user = await db.User.destroy(id);
+    res.send(user);
+  },
 });

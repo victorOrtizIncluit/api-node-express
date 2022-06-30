@@ -1,5 +1,5 @@
-const { v4 } = require("./uuid/uuid");
+const db = require("../database/models");
 
 module.exports = {
-  v4,
+  db,
 };
