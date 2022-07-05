@@ -1,36 +1,36 @@
 module.exports = ({ db }) => ({
   getAll: async (req, res) => {
-    const products = await db.Product.findAll();
-    res.send(products);
+    const users = await db.User.findAll();
+    res.send(users);
   },
 
   getOne: async (req, res) => {
     const { id } = req.params;
-    const product = await db.Product.findOne(id);
-    res.send(product);
+    const user = await db.User.findOne(id);
+    res.send(user);
   },
 
   create: async (req, res) => {
     const { body } = req;
-    const product = await db.Product.create(body);
-    res.send(product);
+    const user = await db.User.create(body);
+    res.send(user);
   },
 
   update: async (req, res) => {
     const { body } = req;
     const { id } = req.params;
-    const product = await db.Product.update(body, id);
-    res.send(product);
+    const user = await db.User.update(body, id);
+    res.send(user);
   },
 
   destroy: async (req, res) => {
     const { id } = req.params;
-    await db.Product.destroy({
+    await db.User.destroy({
       where: {
         id: id,
       },
       truncate: true,
     });
-    res.send(`product: ${id } destroy`);
+    res.send(`user: ${id } destroy`);
   },
 });

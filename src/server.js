@@ -3,7 +3,7 @@ const parser = require("body-parser");
 const app = express();
 const port = process.env.PORT || 3000;
 
-//***ROUTERS***//
+//***ROUTER***//
 const indexRouter = require('./routes/index');
 
 app.use(parser.urlencoded({ extended: false }));
