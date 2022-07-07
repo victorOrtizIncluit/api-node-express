@@ -1,7 +1,7 @@
 module.exports = ({ db }) => ({
   getAll: async (req, res) => {
-    const products = await db.Product.findAll();
-    res.send(products);
+    const products = await db.Product.findAll({raw:true});
+    res.json(products);
   },
 
   getOne: async (req, res) => {
